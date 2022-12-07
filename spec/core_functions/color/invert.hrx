@@ -23,6 +23,11 @@ a {b: invert(gray)}
 
 <===> gray/output.css
 a {
+  b: rgb(127, 127, 127);
+}
+
+<===> gray/output-libsass.css
+a {
   b: #7f7f7f;
 }
 
@@ -32,6 +37,11 @@ a {
 a {b: invert(turquoise)}
 
 <===> turquoise/output.css
+a {
+  b: rgb(191, 31, 47);
+}
+
+<===> turquoise/output-libsass.css
 a {
   b: #bf1f2f;
 }
@@ -53,6 +63,11 @@ a {b: invert(turquoise, 100%)}
 
 <===> weighted/max/output.css
 a {
+  b: rgb(191, 31, 47);
+}
+
+<===> weighted/max/output-libsass.css
+a {
   b: #bf1f2f;
 }
 
@@ -73,6 +88,11 @@ a {b: invert(turquoise, 23%)}
 
 <===> weighted/low/output.css
 a {
+  b: rgb(93, 180, 171);
+}
+
+<===> weighted/low/output-libsass.css
+a {
   b: #5db4ab;
 }
 
@@ -82,6 +102,11 @@ a {
 a {b: invert(turquoise, 92%)}
 
 <===> weighted/high/output.css
+a {
+  b: rgb(181, 46, 60);
+}
+
+<===> weighted/high/output-libsass.css
 a {
   b: #b52e3c;
 }
@@ -108,8 +133,12 @@ a {
 
 <===>
 ================================================================================
+<===> named/options.yml
+:ignore_for:
+  - libsass
+
 <===> named/input.scss
-a {b: invert($color: turquoise, $weight: 0%)}
+a {b: invert($color: turquoise, $weight: 0%, $space: rgb)}
 
 <===> named/output.css
 a {
@@ -196,27 +225,14 @@ Error: Function invert is missing argument $color.
 
 <===>
 ================================================================================
+<===> error/too_many_args/options.yml
+:ignore_for:
+  - libsass
+
 <===> error/too_many_args/input.scss
-a {b: invert(turquoise, 0%, 1)}
+a {b: invert(turquoise, 0%, lch, 1)}
 
 <===> error/too_many_args/error
-Error: Only 2 arguments allowed, but 3 were passed.
-  ,--> input.scss
-1 | a {b: invert(turquoise, 0%, 1)}
-  |       ^^^^^^^^^^^^^^^^^^^^^^^^ invocation
-  '
-  ,--> sass:color
-1 | @function invert($color, $weight: 100%) {
-  |           ============================= declaration
-  '
-  input.scss 1:7  root stylesheet
-
-<===> error/too_many_args/error-libsass
-Error: wrong number of arguments (3 for 2) for `invert'
-        on line 1:7 of input.scss
->> a {b: invert(turquoise, 0%, 1)}
-
-   ------^
 
 <===>
 ================================================================================
