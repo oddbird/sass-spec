@@ -330,3 +330,36 @@ Error: argument `$weight` of `invert($color, $weight: 100%)` must be between -0 
 >> a {b: invert(red, 100.001)}
 
    ------^
+
+<===>
+================================================================================
+<===> error/non_legacy/null_space/options.yml
+:ignore_for:
+  - libsass
+
+<===> error/non_legacy/null_space/input.scss
+a {b: invert(lch(54.3 107 40.9))}
+
+<===> error/non_legacy/null_space/error
+
+<===>
+================================================================================
+<===> error/invalid_interpolation/options.yml
+:ignore_for:
+  - libsass
+
+<===> error/invalid_interpolation/input.scss
+a {b: invert(lch(54.3 107 40.9), 92%, s)}
+
+<===> error/invalid_interpolation/error
+
+<===>
+================================================================================
+<===> error/unknown_space/options.yml
+:ignore_for:
+  - libsass
+
+<===> error/unknown_space/input.scss
+a {b: invert(lch(54.3 107 40.9), $space: s)}
+
+<===> error/unknown_space/error
