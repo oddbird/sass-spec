@@ -156,7 +156,7 @@ a {b: invert(turquoise, 10)}
 
 <===> units/weight/unitless/output.css
 a {
-  b: #4dcdc0;
+  b: rgb(77, 205, 192);
 }
 
 <===> units/weight/unitless/warning
@@ -183,7 +183,7 @@ a {b: invert(turquoise, 10px)}
 
 <===> units/weight/unknown/output.css
 a {
-  b: #4dcdc0;
+  b: rgb(77, 205, 192);
 }
 
 <===> units/weight/unknown/warning
