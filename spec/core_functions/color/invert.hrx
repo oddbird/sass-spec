@@ -147,6 +147,26 @@ a {
 
 <===>
 ================================================================================
+<===> rgb_input/explicit_space/input.scss
+a {b: invert(turquoise, $space: lch)}
+
+<===> rgb_input/explicit_space/output.css
+a {
+  b: lch(19 45.4 366);
+}
+
+<===>
+================================================================================
+<===> rgb_input/hwb_interpolation/input.scss
+a {b: invert(red, 40%, hwb)}
+
+<===> rgb_input/hwb_interpolation/output.css
+a {
+  b: hwb(72 0% 0%);
+}
+
+<===>
+================================================================================
 <===> units/weight/unitless/options.yml
 :ignore_for:
   - libsass
