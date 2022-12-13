@@ -147,6 +147,10 @@ a {
 
 <===>
 ================================================================================
+<===> rgb_input/explicit_space/options.yml
+:ignore_for:
+  - libsass
+
 <===> rgb_input/explicit_space/input.scss
 a {b: invert(turquoise, $space: lch)}
 
@@ -157,12 +161,44 @@ a {
 
 <===>
 ================================================================================
+<===> rgb_input/hwb_interpolation/options.yml
+:ignore_for:
+  - libsass
+  
 <===> rgb_input/hwb_interpolation/input.scss
 a {b: invert(red, 40%, hwb)}
 
 <===> rgb_input/hwb_interpolation/output.css
 a {
   b: hwb(72 0% 0%);
+}
+
+<===>
+================================================================================
+<===> non_legacy_input/options.yml
+:ignore_for:
+  - libsass
+  
+<===> non_legacy_input/input.scss
+a {b: invert(lab(87.8 -79 81), 80%)}
+
+<===> non_legacy_input/output.css
+a {
+  b: lab(27.3 47.4 -49);
+}
+
+<===>
+================================================================================
+<===> predefined_interpolation/xyz/options.yml
+:ignore_for:
+  - libsass
+  
+<===> predefined_interpolation/xyz/input.scss
+a {b: invert(lab(87.8 -79 81), $space: xyz))}
+
+<===> predefined_interpolation/xyz/output.css
+a {
+  b: color(xyz-d65 0.5 0.5 0.5);
 }
 
 <===>
@@ -364,14 +400,14 @@ a {b: invert(lch(54.3 107 40.9))}
 
 <===>
 ================================================================================
-<===> error/invalid_interpolation/options.yml
+<===> error/non_one_hundred_weight/options.yml
 :ignore_for:
   - libsass
 
-<===> error/invalid_interpolation/input.scss
+<===> error/non_one_hundred_weight/input.scss
 a {b: invert(lch(54.3 107 40.9), 92%, s)}
 
-<===> error/invalid_interpolation/error
+<===> error/non_one_hundred_weight/error
 
 <===>
 ================================================================================
@@ -383,3 +419,14 @@ a {b: invert(lch(54.3 107 40.9), 92%, s)}
 a {b: invert(lch(54.3 107 40.9), $space: s)}
 
 <===> error/unknown_space/error
+
+<===>
+================================================================================
+<===> error/invalid_method/options.yml
+:ignore_for:
+  - libsass
+  
+<===> error/invalid_method/input.scss
+a {b: invert(turquoise, $space: display-p3)}
+
+<===> error/invalid_method/output.css
