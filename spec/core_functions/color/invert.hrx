@@ -23,7 +23,7 @@ a {b: invert(gray)}
 
 <===> gray/output.css
 a {
-  b: rgb(127, 127, 127);
+  b: #7f7f7f;
 }
 
 <===> gray/output-libsass.css
@@ -38,7 +38,7 @@ a {b: invert(turquoise)}
 
 <===> turquoise/output.css
 a {
-  b: rgb(191, 31, 47);
+  b: #bf1f2f;
 }
 
 <===> turquoise/output-libsass.css
@@ -63,7 +63,7 @@ a {b: invert(turquoise, 100%)}
 
 <===> weighted/max/output.css
 a {
-  b: rgb(191, 31, 47);
+  b: #bf1f2f;
 }
 
 <===> weighted/max/output-libsass.css
@@ -88,7 +88,7 @@ a {b: invert(turquoise, 23%)}
 
 <===> weighted/low/output.css
 a {
-  b: rgb(93, 180, 171);
+  b: #5db4ab;
 }
 
 <===> weighted/low/output-libsass.css
@@ -103,7 +103,7 @@ a {b: invert(turquoise, 92%)}
 
 <===> weighted/high/output.css
 a {
-  b: rgb(181, 46, 60);
+  b: #b52e3c;
 }
 
 <===> weighted/high/output-libsass.css
@@ -156,7 +156,7 @@ a {b: invert(turquoise, $space: lch)}
 
 <===> rgb_input/explicit_space/output.css
 a {
-  b: lch(19 45.4 366);
+  b: lch(19.0385514428% 45.3782326701 5.9218718506deg);
 }
 
 <===>
@@ -170,7 +170,7 @@ a {b: invert(red, 40%, hwb)}
 
 <===> rgb_input/hwb_interpolation/output.css
 a {
-  b: hwb(72 0% 0%);
+  b: #ccff00;
 }
 
 <===>
