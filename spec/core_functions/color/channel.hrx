@@ -8,7 +8,7 @@ a {b: 25.1% }
 <===> with_space/input.scss
 a {b: channel(hsl(0 100% 25.1%), 'lightness', 'oklch')}
 
-<===> coverted_legacy_channel_to_zero/output.scss
+<===> with_space/output.scss
 a {b: 37.67% }
 
 ================================================================================
