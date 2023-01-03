@@ -1,0 +1,36 @@
+<===> known_space/input.scss
+a {b: same(hsl(0 100% 25.1%), 'red')}
+
+<===> known_space/output.scss
+a {b: false }
+
+================================================================================
+<===> unknown_space/input.scss
+a {b: same(hsl(0 100% 25.1%), 'kombucha')}
+
+<===> unknown_space/output.scss
+a {b: '?' } // doesn't this just return an error? is it possible to have an unknown color
+// with a valid color?
+
+================================================================================
+<===> error/too_few_args/input.scss
+
+a {b: same()}
+
+<===> error/too_few_args/error
+
+================================================================================
+<===> error/too_many_args/input.scss
+
+a {b: channel('red', 'green', 'purple')}
+
+<===> error/too_many_args/error
+
+================================================================================
+<===> error/not_color/input.scss
+
+a {b: channel(1, 'red')}
+
+<===> error/not_color/error
+
+================================================================================
