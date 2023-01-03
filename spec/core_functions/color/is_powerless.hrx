@@ -1,0 +1,42 @@
+<===> no_space/input.scss
+a {b: is-powerless('red', 'hue')}
+
+<===> no_space/output.scss
+a {b: true }
+
+================================================================================
+<===> is_not_powerless/input.scss
+a {b: is-powerless(hsl(0, 100%, 50%), 'hue')}
+
+<===> coverted_legacy_channel_to_zero/output.scss
+a {b: false }
+
+================================================================================
+<===> error/too_few_args/input.scss
+
+a {b: is-powerless()}
+
+<===> error/too_few_args/error
+
+================================================================================
+<===> error/too_many_args/input.scss
+
+a {b: is-powerless('red', 'hue', 'hsl', 'banana')}
+
+<===> error/too_many_args/error
+
+================================================================================
+<===> error/not_color/input.scss
+
+a {b: is-powerless(1, 'hue', 'hsl')}
+
+<===> error/not_color/error
+
+================================================================================
+<===> error/not_channel/input.scss
+
+a {b: is-powerless('red', 'happiness', 'hsl')}
+
+<===> error/not_channel/error
+
+================================================================================
