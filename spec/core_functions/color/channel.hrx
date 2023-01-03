@@ -1,0 +1,49 @@
+<===> no_space/input.scss
+a {b: channel(hsl(0 100% 25.1%), 'lightness')}
+
+<===> no_space/output.scss
+a {b: 25.1% }
+
+================================================================================
+<===> with_space/input.scss
+a {b: channel(hsl(0 100% 25.1%), 'lightness', 'oklch')}
+
+<===> coverted_legacy_channel_to_zero/output.scss
+a {b: 37.67% }
+
+================================================================================
+<===> error/too_few_args/input.scss
+
+a {b: channel()}
+
+<===> error/too_few_args/error
+
+================================================================================
+<===> error/too_many_args/input.scss
+
+a {b: channel(hsl(0 100% 25.1%), 'lightness', 'oklch', 'banana')}
+
+<===> error/too_many_args/error
+
+================================================================================
+<===> error/not_color/input.scss
+
+a {b: channel(1, 'lightness', 'oklch')}
+
+<===> error/not_color/error
+
+================================================================================
+<===> error/not_channel/input.scss
+
+a {b: channel('red', 'happiness', 'oklch')}
+
+<===> error/not_channel/error
+
+================================================================================
+<===> error/not_space/input.scss
+
+a {b: channel('red', 'happiness', 'milky_way')}
+
+<===> error/not_channel/error
+
+================================================================================
