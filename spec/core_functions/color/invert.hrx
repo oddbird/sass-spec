@@ -73,6 +73,13 @@ a {
 
 <===>
 ================================================================================
+<===> weighted_with_space/max/input.scss
+a {b: invert(turquoise, 100%, oklab)}
+
+<===> weighted_with_space/max/output.css
+
+<===>
+================================================================================
 <===> weighted/middle/input.scss
 a {b: invert(turquoise, 50%)}
 
@@ -109,6 +116,16 @@ a {
 <===> weighted/high/output-libsass.css
 a {
   b: #b52e3c;
+}
+
+<===>
+================================================================================
+<===> weighted_with_space/min/input.scss
+a {b: invert(turquoise, 0%, oklab)}
+
+<===> weighted_with_space/min/output.css
+a {
+  b: turquoise;
 }
 
 <===>
@@ -155,9 +172,6 @@ a {
 a {b: invert(turquoise, $space: lch)}
 
 <===> rgb_input/explicit_space/output.css
-a {
-  b: lch(19.0385514428% 45.3782326701 5.9218718506deg);
-}
 
 <===>
 ================================================================================
@@ -175,20 +189,6 @@ a {
 
 <===>
 ================================================================================
-<===> non_legacy_input/options.yml
-:ignore_for:
-  - libsass
-  
-<===> non_legacy_input/input.scss
-a {b: invert(lab(87.8 -79 81), 80%)}
-
-<===> non_legacy_input/output.css
-a {
-  b: lab(27.3 47.4 -49);
-}
-
-<===>
-================================================================================
 <===> predefined_interpolation/xyz/options.yml
 :ignore_for:
   - libsass
@@ -196,10 +196,13 @@ a {
 <===> predefined_interpolation/xyz/input.scss
 a {b: invert(lab(87.8 -79 81), $space: xyz))}
 
-<===> predefined_interpolation/xyz/output.css
-a {
-  b: color(xyz-d65 0.5 0.5 0.5);
-}
+<===> predefined_interpolation/xyz/error
+Error: expected ";".
+  ,
+1 | a {b: invert(lab(87.8 -79 81), $space: xyz))}
+  |                                            ^
+  '
+  input.scss 1:44  root stylesheet
 
 <===>
 ================================================================================
@@ -212,7 +215,7 @@ a {b: invert(turquoise, 10)}
 
 <===> units/weight/unitless/output.css
 a {
-  b: rgb(77, 205, 192);
+  b: #4dcdc0;
 }
 
 <===> units/weight/unitless/warning
@@ -239,7 +242,7 @@ a {b: invert(turquoise, 10px)}
 
 <===> units/weight/unknown/output.css
 a {
-  b: rgb(77, 205, 192);
+  b: #4dcdc0;
 }
 
 <===> units/weight/unknown/warning
@@ -254,6 +257,17 @@ More info: https://sass-lang.com/d/function-units
   |       ^^^^^^^^^^^^^^^^^^^^^^^
   '
     input.scss 1:7  root stylesheet
+
+<===>
+================================================================================
+<===> invalid_space/one_hundred_percent_weight/options.yml
+:ignore_for:
+  - libsass
+
+<===> invalid_space/one_hundred_percent_weight/input.scss
+a {b: invert(lch(54.3 107 40.9), 100%, s)}
+
+<===> invalid_space/one_hundred_percent_weight/output.css
 
 <===>
 ================================================================================
@@ -289,6 +303,16 @@ Error: Function invert is missing argument $color.
 a {b: invert(turquoise, 0%, lch, 1)}
 
 <===> error/too_many_args/error
+Error: Only 3 arguments allowed, but 4 were passed.
+  ,--> input.scss
+1 | a {b: invert(turquoise, 0%, lch, 1)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ invocation
+  '
+  ,--> sass:color
+1 | @function invert($color, $weight: 100%, $space: null) {
+  |           =========================================== declaration
+  '
+  input.scss 1:7  root stylesheet
 
 <===>
 ================================================================================
@@ -397,6 +421,12 @@ Error: argument `$weight` of `invert($color, $weight: 100%)` must be between -0 
 a {b: invert(lch(54.3 107 40.9))}
 
 <===> error/non_legacy/null_space/error
+Error: $color: To use color.invert() with non-legacy color lch(54.3% 107 40.9deg), you must provide a $space.
+  ,
+1 | a {b: invert(lch(54.3 107 40.9))}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
 
 <===>
 ================================================================================
@@ -408,6 +438,12 @@ a {b: invert(lch(54.3 107 40.9))}
 a {b: invert(lch(54.3 107 40.9), 92%, s)}
 
 <===> error/non_one_hundred_weight/error
+Error: $space: Unknown color space "s".
+  ,
+1 | a {b: invert(lch(54.3 107 40.9), 92%, s)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
 
 <===>
 ================================================================================
@@ -419,6 +455,12 @@ a {b: invert(lch(54.3 107 40.9), 92%, s)}
 a {b: invert(lch(54.3 107 40.9), $space: s)}
 
 <===> error/unknown_space/error
+Error: $space: Unknown color space "s".
+  ,
+1 | a {b: invert(lch(54.3 107 40.9), $space: s)}
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  '
+  input.scss 1:7  root stylesheet
 
 <===>
 ================================================================================
