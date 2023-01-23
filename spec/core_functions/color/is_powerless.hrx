@@ -5,11 +5,46 @@ a {b: is-powerless('red', 'hue')}
 a {b: true }
 
 ================================================================================
-<===> is_not_powerless/input.scss
+<===> hsl_is_not_powerless/input.scss
 a {b: is-powerless(hsl(0, 100%, 50%), 'hue')}
 
-<===> coverted_legacy_channel_to_zero/output.scss
+<===> hsl_is_not_powerless/output.scss
 a {b: false }
+
+================================================================================
+<===> hsl_hue_powerless/input.scss
+a {b: is-powerless(hsl(0, 0%, 50%), 'hue')}
+
+<===> hsl_hue_powerless/output.scss
+a {b: true }
+
+================================================================================
+<===> hsl_lightness_powerless/input.scss
+a {b: is-powerless(hsl(0, 50%, 100%), 'lightness')}
+
+<===> hsl_lightness_powerless/output.scss
+a {b: true }
+
+================================================================================
+<===> hwb_hue_powerless/input.scss
+a {b: is-powerless(hwb(0, 47%, 53%), 'hue')}
+
+<===> hwb_hue_powerless/output.scss
+a {b: true }
+
+================================================================================
+<===> lch_hue_powerless/input.scss
+a {b: is-powerless(lch(50% 0 50)), 'hue')}
+
+<===> lch_hue_powerless/output.scss
+a {b: true }
+
+================================================================================
+<===> lch_chroma_powerless/input.scss
+a {b: is-powerless(lch(0% 50 50)), 'chroma')}
+
+<===> lch_chroma_powerless/output.scss
+a {b: true }
 
 ================================================================================
 <===> error/too_few_args/input.scss
