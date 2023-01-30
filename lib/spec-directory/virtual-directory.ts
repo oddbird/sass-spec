@@ -2,9 +2,9 @@ import fs from 'fs';
 import path from 'path';
 
 import {Readable} from 'stream';
-import RealDirectory from './real-directory';
 import SpecDirectory, {SpecIteratee} from './spec-directory';
 import {archiveFromStream, Directory as HrxDirectory} from 'node-hrx';
+import SpecOptions from './options';
 import {withAsyncCleanup} from './cleanup';
 import {normalizeSpecPath} from './spec-path';
 
@@ -33,30 +33,24 @@ function createSubdirCache(dir: HrxDirectory): Record<string, HrxDirectory> {
 export default class VirtualDirectory extends SpecDirectory {
   path: string;
   basePath: string;
-
-  /**
-   * The directory that contains this, or `null` if this is the root directory.
-   */
-  private _parent: SpecDirectory | null;
-
-  /** Names of direct files in archive order. */
+  // Names of direct files in archive order
   private fileNames: string[];
-
-  /** Mapping from file names to file contents. */
+  // Mapping from file names to file contents
   private fileContents: Record<string, string>;
-
-  /** Names of direct subdirectories in archive order. */
+  // Names of direct subdirectories in archive order
   private subdirNames: string[];
-
-  /** The mapping from subdir names to the HRX Directory object. */
+  // mapping from subdir names to the HRX Directory object
   private subdirCache: Record<string, HrxDirectory>;
-
   private isArchiveRoot: boolean;
   private modified = false;
 
-  constructor(basePath: string, hrxDir: HrxDirectory, parent?: SpecDirectory) {
-    super(parent?.root);
-    this._parent = parent ?? null;
+  constructor(
+    basePath: string,
+    hrxDir: HrxDirectory,
+    root?: SpecDirectory,
+    parentOpts?: SpecOptions
+  ) {
+    super(root, parentOpts);
     this.path = path.resolve(basePath, hrxDir.path);
     this.basePath = basePath;
     // Separate the contents of the HrxDirectory into files and subdirs.
@@ -71,21 +65,13 @@ export default class VirtualDirectory extends SpecDirectory {
     this.isArchiveRoot = hrxDir.path === '';
   }
 
-  async parent(): Promise<SpecDirectory | null> {
-    return this._parent;
-  }
-
   // Factories
 
-  /**
-   * Loads a spec directory from the HRX file at `hrxPath`.
-   *
-   * If this isn't the root of the test suite, `parent` must be the directory
-   * that contains this file.
-   */
+  // Unarchive the given .hrx file and turn it into a spec path
   static async fromArchive(
     hrxPath: string,
-    parent?: RealDirectory
+    root?: SpecDirectory,
+    parentOpts?: SpecOptions
   ): Promise<VirtualDirectory> {
     const stream = fs.createReadStream(hrxPath, {encoding: 'utf-8'});
     let archive;
@@ -96,16 +82,26 @@ export default class VirtualDirectory extends SpecDirectory {
     }
 
     const {dir, name} = path.parse(hrxPath);
-    return new VirtualDirectory(path.resolve(dir, name), archive, parent);
+    return new VirtualDirectory(
+      path.resolve(dir, name),
+      archive,
+      root,
+      parentOpts
+    );
   }
 
   /**
-   * Create a virtual directory from string contents, for testing purposes.
+   * Create a virtual directory from string contents, and an optional path.
+   * If no path is given (e.g. in testing), it is set to an empty string.
    */
-  static async fromContents(contents: string): Promise<VirtualDirectory> {
+  static async fromContents(
+    contents: string,
+    path = ''
+  ): Promise<VirtualDirectory> {
     const stream = Readable.from(contents);
     const archive = await archiveFromStream(stream);
-    return new VirtualDirectory('<test>', archive);
+    // TODO where should the temp path be?
+    return new VirtualDirectory(path, archive);
   }
 
   // File access
@@ -158,9 +154,10 @@ export default class VirtualDirectory extends SpecDirectory {
   async getSubdir(name: string): Promise<VirtualDirectory> {
     const subdir = this.subdirCache[normalizeSpecPath(name)];
     if (!subdir) {
-      throw new Error(`Subdirectory does not exist: ${this.path}/${name}`);
+      throw new Error(`Subdirectory does not exist: ${path}/${name}`);
     }
-    return new VirtualDirectory(this.basePath, subdir, this);
+    const options = await this.options();
+    return new VirtualDirectory(this.basePath, subdir, this.root, options);
   }
 
   // Iteration

@@ -2,7 +2,6 @@ import path from 'path';
 import yargs from 'yargs/yargs';
 import {Argv} from 'yargs';
 import {Compiler, DartCompiler, ExecutableCompiler} from './compiler';
-import {TodoMode} from './test-case/util';
 
 export interface CliArgs {
   root: string;
@@ -11,7 +10,7 @@ export interface CliArgs {
   compiler: Compiler;
   interactive: boolean;
   testDirs: string[];
-  todoMode: TodoMode;
+  todoMode?: string;
 }
 
 const implArgs: Record<string, string[]> = {

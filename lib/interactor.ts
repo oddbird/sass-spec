@@ -64,10 +64,8 @@ const options: InteractorOption[] = [
   },
   {
     key: 'O',
-    description: test =>
-      test.result().failureType === 'unnecessary_todo'
-        ? 'Remove TODO and pass test'
-        : 'Update expected output and pass test',
+    description: 'Update expected output and pass test',
+    requirement: test => test.result().failureType !== 'unnecessary_todo',
     resolve: test => test.overwrite(),
   },
   {
