@@ -197,15 +197,9 @@ a {
   - libsass
   
 <===> predefined_interpolation/xyz/input.scss
-a {b: invert(lab(87.8 -79 81), $space: xyz))}
+a {b: invert(lab(87.8 -79 81), $space: xyz)}
 
-<===> predefined_interpolation/xyz/error
-Error: expected ";".
-  ,
-1 | a {b: invert(lab(87.8 -79 81), $space: xyz))}
-  |                                            ^
-  '
-  input.scss 1:44  root stylesheet
+<===> predefined_interpolation/xyz/output.css
 
 <===>
 ================================================================================
