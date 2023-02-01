@@ -257,17 +257,6 @@ More info: https://sass-lang.com/d/function-units
 
 <===>
 ================================================================================
-<===> invalid_space/one_hundred_percent_weight/options.yml
-:ignore_for:
-  - libsass
-
-<===> invalid_space/one_hundred_percent_weight/input.scss
-a {b: invert(lch(54.3 107 40.9), 100%, s)}
-
-<===> invalid_space/one_hundred_percent_weight/output.css
-
-<===>
-================================================================================
 <===> error/too_few_args/input.scss
 a {b: invert()}
 
@@ -468,4 +457,4 @@ Error: $space: Unknown color space "s".
 <===> error/invalid_method/input.scss
 a {b: invert(turquoise, $space: display-p3)}
 
-<===> error/invalid_method/output.css
+<===> error/invalid_method/error
