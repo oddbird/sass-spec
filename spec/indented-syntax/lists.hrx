@@ -1,0 +1,202 @@
+<===> lists/inline/input.sass
+$list: (1, 2)
+a
+  value: $list
+
+<===> lists/inline/output.css
+a {
+  value: 1, 2;
+}
+
+<===>
+================================================================================
+<===> lists/paren-alone/options.yml
+:todo:
+  - dart-sass
+
+<===> lists/paren-alone/input.sass
+$list: (
+  1,
+  2
+)
+a
+  value: $list
+
+<===> lists/paren-alone/output.css
+a {
+  value: 1, 2;
+}
+
+<===>
+================================================================================
+<===> lists/no-parens/options.yml
+:ignore_for:
+  - dart-sass
+
+<===> lists/no-parens/input.sass
+// WILL NOT SUPPORT: There is no way to know where this list ends
+$list:
+  1,
+  2
+
+a
+  value: $list
+
+<===> lists/no-parens/output.css
+a {
+  value: 1, 2;
+}
+
+<===>
+================================================================================
+<===> lists/paren-with-value-aligned/options.yml
+:todo:
+  - dart-sass
+
+<===> lists/paren-with-value-aligned/input.sass
+$list: ( 1,
+         2,
+         3 )
+a
+  value: $list
+
+<===> lists/paren-with-value-aligned/output.css
+a {
+  value: 1, 2, 3;
+}
+
+<===>
+================================================================================
+<===> lists/paren-with-value-indented/options.yml
+:todo:
+  - dart-sass
+
+<===> lists/paren-with-value-indented/input.sass
+$list: ( 1,
+  2,
+  3 )
+a
+  value: $list
+
+<===> lists/paren-with-value-indented/output.css
+a {
+  value: 1, 2, 3;
+}
+
+<===>
+================================================================================
+<===> lists/inline-trailing-comma/input.sass
+$list: 1, 2,
+a
+  value: $list
+
+<===> lists/inline-trailing-comma/output.css
+a {
+  value: 1, 2;
+}
+
+<===>
+================================================================================
+<===> lists/trailing-comma/options.yml
+:todo:
+  - dart-sass
+
+<===> lists/trailing-comma/input.sass
+$list: (
+  1,
+  2,
+)
+a
+  value: $list
+
+<===> lists/trailing-comma/output.css
+a {
+  value: 1, 2;
+}
+
+<===>
+================================================================================
+<===> lists/trailing-comma-no-parens/options.yml
+:ignore_for:
+  - dart-sass
+
+<===> lists/trailing-comma-no-parens/input.sass
+// WILL NOT SUPPORT: Is there a way to know where this list ends?
+$list:
+  1,
+  2,
+a
+  value: $list
+
+<===> lists/trailing-comma-no-parens/output.css
+a {
+  value: 1, 2;
+}
+
+<===>
+================================================================================
+<===> font-face/inline/input.sass
+@font-face
+    font-family: 'Geneva'
+    src: url('fonts/geneva-webfont.eot')
+    src: url('fonts/geneva-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/geneva-webfont.woff') format('woff'), url('fonts/geneva-webfont.ttf') format('truetype')
+    font-weight: normal
+    font-style: normal
+
+<===> font-face/inline/output.css
+@font-face {
+  font-family: "Geneva";
+  src: url("fonts/geneva-webfont.eot");
+  src: url("fonts/geneva-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/geneva-webfont.woff") format("woff"), url("fonts/geneva-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+<===>
+================================================================================
+<===> font-face/multiline/options.yml
+:todo:
+  - dart-sass
+
+<===> font-face/multiline/input.sass
+@font-face
+    font-family: 'Geneva'
+    src: url('fonts/geneva-webfont.eot')
+    src: (url('fonts/geneva-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/geneva-webfont.woff') format('woff'),
+         url('fonts/geneva-webfont.ttf') format('truetype'))
+    font-weight: normal
+    font-style: normal
+
+<===> font-face/multiline/output.css
+@font-face {
+  font-family: "Geneva";
+  src: url("fonts/geneva-webfont.eot");
+  src: url("fonts/geneva-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/geneva-webfont.woff") format("woff"), url("fonts/geneva-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+================================================================================
+<===> font-face/multiline-unwrapped/options.yml
+:ignore_for:
+  - dart-sass
+
+<===> font-face/multiline-unwrapped/input.sass
+// WILL NOT SUPPORT
+@font-face
+    font-family: 'Geneva'
+    src: url('fonts/geneva-webfont.eot')
+    src: url('fonts/geneva-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/geneva-webfont.woff') format('woff'),
+         url('fonts/geneva-webfont.ttf') format('truetype')
+    font-weight: normal
+    font-style: normal
+
+<===> font-face/multiline-unwrapped/output.css
+@font-face {
+  font-family: "Geneva";
+  src: url("fonts/geneva-webfont.eot");
+  src: url("fonts/geneva-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/geneva-webfont.woff") format("woff"), url("fonts/geneva-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
