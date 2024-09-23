@@ -1,0 +1,41 @@
+<===> operations/equal/input.sass
+a
+  value: 1 == 1
+
+<===> operations/equal/output.css
+a {
+  value: true;
+}
+
+<===>
+================================================================================
+<===> operations/equal-mutliline-after/options.yml
+:todo:
+  - dart-sass
+
+<===> operations/equal-mutliline-after/input.sass
+a
+  value: 1 ==
+    1
+
+<===> operations/equal-mutliline-after/output.css
+a {
+  value: true;
+}
+<===>
+================================================================================
+<===> operations/equal-mutliline-before/options.yml
+:todo:
+  - dart-sass
+
+<===> operations/equal-mutliline-before/input.sass
+a
+  value: 1 
+  == 1
+
+<===> operations/equal-mutliline-before/output.css
+a {
+  value: true;
+}
+<===>
+================================================================================

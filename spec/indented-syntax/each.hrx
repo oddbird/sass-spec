@@ -1,0 +1,108 @@
+<===> each/each/input.sass
+$sizes: 12px, 24px
+
+@each $size in $sizes
+  .size-#{$size}
+    font-size: $size
+
+<===> each/each/output.css
+.size-12px {
+  font-size: 12px;
+}
+.size-24px {
+  font-size: 24px;
+}
+
+<===>
+================================================================================
+<===> each/each-multiline/options.yml
+:todo:
+  - dart-sass
+
+<===> each/each-multiline/input.sass
+$sizes: 12px, 24px
+
+@each
+  $size
+  in
+  $sizes
+  .size-#{$size}
+    font-size: $size
+
+<===> each/each-multiline/output.css
+.size-12px {
+  font-size: 12px;
+}
+.size-24px {
+  font-size: 24px;
+}
+
+<===>
+================================================================================
+<===> each/each-multiline-inline-list/options.yml
+:ignore_for:
+  - dart-sass
+
+<===> each/each-multiline-inline-list/input.sass
+// Will not support- unwrapped list
+@each
+  $size
+  in
+  12px 24px
+  .size-#{$size}
+    font-size: $size
+
+<===> each/each-multiline-inline-list/output.css
+.size-12px {
+  font-size: 12px;
+}
+.size-24px {
+  font-size: 24px;
+}
+
+<===>
+================================================================================
+<===> each/multiline-inline-wrapped-list/options.yml
+:todo:
+  - dart-sass
+
+<===> each/multiline-inline-wrapped-list/input.sass
+@each
+  $size
+  in
+  (12px 24px)
+  .size-#{$size}
+    font-size: $size
+
+<===> each/multiline-inline-wrapped-list/output.css
+.size-12px {
+  font-size: 12px;
+}
+.size-24px {
+  font-size: 24px;
+}
+<===>
+================================================================================
+<===> each/multiline-inline-unwrapped-map/options.yml
+:todo:
+  - dart-sass
+
+<===> each/multiline-inline-unwrapped-map/input.sass
+// Can support, as the destructured values are before `in` keyword. But should we?
+$map: (a: 12px, b: 24px)
+@each
+  $key, $value
+  in
+  $map
+  .#{$key}
+    font-size: $value
+
+<===> each/multiline-inline-unwrapped-map/output.css
+.a {
+  font-size: 12px;
+}
+.b{
+  font-size: 24px;
+}
+<===>
+================================================================================
