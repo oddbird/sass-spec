@@ -1,0 +1,81 @@
+<===> if/if/input.sass
+$v: true
+a
+  @if $v
+    value: 1
+
+<===> if/if/output.css
+a {
+  value: 1;
+}
+
+<===>
+================================================================================
+<===> if/if-statement/input.sass
+$v: up
+a
+  @if $v == up
+    value: 1
+
+<===> if/if-statement/output.css
+a {
+  value: 1;
+}
+
+<===>
+================================================================================
+<===> if/if-statement-wrapped/input.sass
+$v: up
+a
+  @if ($v == up)
+    value: 1
+
+<===> if/if-statement-wrapped/output.css
+a {
+  value: 1;
+}
+
+<===>
+================================================================================
+<===> if/if-statement-wrapped-multiline/options.yml
+:todo:
+  - dart-sass
+
+<===> if/if-statement-wrapped-multiline/input.sass
+$v: up
+$x: down
+a
+  @if (
+    $v == up and
+    $x == down
+    )
+    value: 1
+
+<===> if/if-statement-wrapped-multiline/output.css
+a {
+  value: 1;
+}
+
+<===>
+================================================================================
+<===> if/if-statement-unwrapped-multiline/options.yml
+:ignore_for:
+  - dart-sass
+
+<===> if/if-statement-unwrapped-multiline/input.sass
+// WILL NOT SUPPORT
+$v: up
+$x: down
+a
+  @if 
+    $v == up and
+    $x == down
+    value: 1
+
+<===> if/if-statement-unwrapped-multiline/output.css
+a {
+  value: 1;
+}
+
+<===>
+================================================================================
