@@ -120,6 +120,17 @@ shared, in-imported {
   x: y;
 }
 
+<===> use_into_use_and_import_into_use/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+2 | @import "imported";
+  |         ^^^^^^^^^^
+  '
+    input.scss 2:9  root stylesheet
+
 <===>
 ================================================================================
 <===> use_into_use_and_import_into_import/input.scss
@@ -151,6 +162,28 @@ shared, in-imported {
   x: y;
 }
 
+<===> use_into_use_and_import_into_import/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+2 | @import "imported";
+  |         ^^^^^^^^^^
+  '
+    input.scss 2:9  root stylesheet
+
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "shared";
+  |         ^^^^^^^^
+  '
+    _imported.scss 1:9  @import
+    input.scss 2:9      root stylesheet
+
 <===>
 ================================================================================
 <===> use_into_use_and_use_into_import/input.scss
@@ -181,6 +214,18 @@ shared, in-user {
 shared, in-importer {
   x: y;
 }
+
+<===> use_into_use_and_use_into_import/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "shared";
+  |         ^^^^^^^^
+  '
+    _importer.scss 1:9  @use
+    input.scss 2:1      root stylesheet
 
 <===>
 ================================================================================
@@ -215,6 +260,18 @@ shared, in-imported {
 shared, in-used {
   x: y;
 }
+
+<===> use_into_use_and_use_into_import_into_use/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "imported";
+  |         ^^^^^^^^^^
+  '
+    _importer.scss 1:9  @use
+    input.scss 1:1      root stylesheet
 
 <===>
 ================================================================================
@@ -262,6 +319,27 @@ in-shared, right-extendee, left-extendee {
   x: y;
 }
 
+<===> use_and_import_into_diamond_extend/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+2 | @import "downstream";
+  |         ^^^^^^^^^^^^
+  '
+    input.scss 2:9  root stylesheet
+
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+3 | @import "imported";
+  |         ^^^^^^^^^^
+  '
+    input.scss 3:9  root stylesheet
+
 <===>
 ================================================================================
 <===> isolated_through_import/input.scss
@@ -295,3 +373,14 @@ in-shared, right-extendee, left-extendee {
 .in-shared, .in-used-by-imported {
   a: b;
 }
+
+<===> isolated_through_import/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+2 | @import "imported";
+  |         ^^^^^^^^^^
+  '
+    input.scss 2:9  root stylesheet

@@ -32,7 +32,6 @@ baz {
   foo {
     bar: baz;
   }
-
   baz {
     bar: foo;
   }
@@ -41,7 +40,6 @@ baz {
   foo {
     bar: baz;
   }
-
   baz {
     bar: foo;
   }
@@ -50,7 +48,6 @@ baz {
   foo {
     bar: baz;
   }
-
   baz {
     bar: foo;
   }
@@ -59,8 +56,28 @@ baz {
   foo {
     bar: baz;
   }
-
   baz {
     bar: foo;
   }
 }
+
+<===> warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "import";
+  |         ^^^^^^^^
+  '
+    input.scss 1:9  root stylesheet
+
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+9 |     @import "import";
+  |             ^^^^^^^^
+  '
+    input.scss 9:13  root stylesheet

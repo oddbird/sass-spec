@@ -11,6 +11,17 @@ c {
   d: a();
 }
 
+<===> defined_elsewhere/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+3 | @import "plain";
+  |         ^^^^^^^
+  '
+    input.scss 3:9  root stylesheet
+
 <===>
 ================================================================================
 <===> hsl/input.scss

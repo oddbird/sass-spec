@@ -22,6 +22,17 @@ b {
   c: in-upstream;
 }
 
+<===> top_level/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+3 | @import "midstream";
+  |         ^^^^^^^^^^^
+  '
+    input.scss 3:9  root stylesheet
+
 <===>
 ================================================================================
 <===> nested/input.scss
@@ -43,3 +54,14 @@ $a: in-upstream;
 b {
   c: in-upstream;
 }
+
+<===> nested/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+4 |   @import "midstream";
+  |           ^^^^^^^^^^^
+  '
+    input.scss 4:11  root stylesheet

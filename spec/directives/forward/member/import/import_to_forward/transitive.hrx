@@ -17,6 +17,28 @@ a {
   b: d;
 }
 
+<===> transitive/variable/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "downstream";
+  |         ^^^^^^^^^^^^
+  '
+    input.scss 1:9  root stylesheet
+
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "midstream";
+  |         ^^^^^^^^^^^
+  '
+    _downstream.scss 1:9  @import
+    input.scss 1:9        root stylesheet
+
 <===>
 ================================================================================
 <===> transitive/mixin/input.scss
@@ -38,6 +60,28 @@ a {
   c: d;
 }
 
+<===> transitive/mixin/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "downstream";
+  |         ^^^^^^^^^^^^
+  '
+    input.scss 1:9  root stylesheet
+
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "midstream";
+  |         ^^^^^^^^^^^
+  '
+    _downstream.scss 1:9  @import
+    input.scss 1:9        root stylesheet
+
 <===>
 ================================================================================
 <===> transitive/function/input.scss
@@ -58,3 +102,25 @@ a {b: c()}
 a {
   b: d;
 }
+
+<===> transitive/function/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "downstream";
+  |         ^^^^^^^^^^^^
+  '
+    input.scss 1:9  root stylesheet
+
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "midstream";
+  |         ^^^^^^^^^^^
+  '
+    _downstream.scss 1:9  @import
+    input.scss 1:9        root stylesheet

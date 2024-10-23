@@ -23,3 +23,24 @@ a {b: c}
 a {
   b: c;
 }
+
+<===> css_import_after_style_rule/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+2 | @import "rule";
+  |         ^^^^^^
+  '
+    input.scss 2:9  root stylesheet
+
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+3 | @import "import";
+  |         ^^^^^^^^
+  '
+    input.scss 3:9  root stylesheet

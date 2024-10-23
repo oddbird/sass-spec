@@ -31,6 +31,27 @@ after-second {
   a: 2;
 }
 
+<===> override/variable/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "midstream1";
+  |         ^^^^^^^^^^^^
+  '
+    input.scss 1:9  root stylesheet
+
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+4 | @import "midstream2";
+  |         ^^^^^^^^^^^^
+  '
+    input.scss 4:9  root stylesheet
+
 <===>
 ================================================================================
 <===> override/mixin/input.scss
@@ -61,6 +82,27 @@ after-second {
   b: 2;
 }
 
+<===> override/mixin/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "midstream1";
+  |         ^^^^^^^^^^^^
+  '
+    input.scss 1:9  root stylesheet
+
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+4 | @import "midstream2";
+  |         ^^^^^^^^^^^^
+  '
+    input.scss 4:9  root stylesheet
+
 <===>
 ================================================================================
 <===> override/function/input.scss
@@ -90,3 +132,24 @@ after-first {
 after-second {
   a: 2;
 }
+
+<===> override/function/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "midstream1";
+  |         ^^^^^^^^^^^^
+  '
+    input.scss 1:9  root stylesheet
+
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+4 | @import "midstream2";
+  |         ^^^^^^^^^^^^
+  '
+    input.scss 4:9  root stylesheet

@@ -26,3 +26,14 @@ $include-foo: true !default;
 .my-scope .foo {
   display: none;
 }
+
+<===> warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+7 |   @import 'input-bug';
+  |           ^^^^^^^^^^^
+  '
+    input.scss 7:11  root stylesheet

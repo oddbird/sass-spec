@@ -62,3 +62,14 @@ a { #{--}: b c }
 a {
   --: b c;
 }
+
+<===> import_nesting_use/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+2 | @import 'foo';
+  |         ^^^^^
+  '
+    input.scss 2:9  root stylesheet

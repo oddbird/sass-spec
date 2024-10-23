@@ -15,6 +15,27 @@ a {
   b: value;
 }
 
+<===> no_forward/no_use/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "first";
+  |         ^^^^^^^
+  '
+    input.scss 1:9  root stylesheet
+
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+2 | @import "second";
+  |         ^^^^^^^^
+  '
+    input.scss 2:9  root stylesheet
+
 <===>
 ================================================================================
 <===> no_forward/use_in_first/input.scss
@@ -36,6 +57,27 @@ a {
   b: value;
 }
 
+<===> no_forward/use_in_first/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "first";
+  |         ^^^^^^^
+  '
+    input.scss 1:9  root stylesheet
+
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+2 | @import "second";
+  |         ^^^^^^^^
+  '
+    input.scss 2:9  root stylesheet
+
 <===>
 ================================================================================
 <===> no_forward/use_in_second/input.scss
@@ -56,6 +98,27 @@ a {
 a {
   b: value;
 }
+
+<===> no_forward/use_in_second/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "first";
+  |         ^^^^^^^
+  '
+    input.scss 1:9  root stylesheet
+
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+2 | @import "second";
+  |         ^^^^^^^^
+  '
+    input.scss 2:9  root stylesheet
 
 <===>
 ================================================================================
@@ -80,6 +143,27 @@ a {
   b: value;
 }
 
+<===> no_forward/use_in_both/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "first";
+  |         ^^^^^^^
+  '
+    input.scss 1:9  root stylesheet
+
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+2 | @import "second";
+  |         ^^^^^^^^
+  '
+    input.scss 2:9  root stylesheet
+
 <===>
 ================================================================================
 <===> forwarded_first/no_use/input.scss
@@ -101,6 +185,27 @@ a {
 a {
   b: value;
 }
+
+<===> forwarded_first/no_use/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "first";
+  |         ^^^^^^^
+  '
+    input.scss 1:9  root stylesheet
+
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+2 | @import "second";
+  |         ^^^^^^^^
+  '
+    input.scss 2:9  root stylesheet
 
 <===>
 ================================================================================
@@ -126,6 +231,27 @@ a {
   b: value;
 }
 
+<===> forwarded_first/use_in_first/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "first";
+  |         ^^^^^^^
+  '
+    input.scss 1:9  root stylesheet
+
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+2 | @import "second";
+  |         ^^^^^^^^
+  '
+    input.scss 2:9  root stylesheet
+
 <===>
 ================================================================================
 <===> forwarded_first/use_in_second/input.scss
@@ -149,6 +275,27 @@ a {
 a {
   b: value;
 }
+
+<===> forwarded_first/use_in_second/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "first";
+  |         ^^^^^^^
+  '
+    input.scss 1:9  root stylesheet
+
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+2 | @import "second";
+  |         ^^^^^^^^
+  '
+    input.scss 2:9  root stylesheet
 
 <===>
 ================================================================================
@@ -175,3 +322,24 @@ a {
 a {
   b: value;
 }
+
+<===> forwarded_first/use_in_both/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "first";
+  |         ^^^^^^^
+  '
+    input.scss 1:9  root stylesheet
+
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+2 | @import "second";
+  |         ^^^^^^^^
+  '
+    input.scss 2:9  root stylesheet

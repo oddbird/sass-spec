@@ -17,6 +17,19 @@ b {
   c: d;
 }
 
+<===> mixin/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "imported";
+  |         ^^^^^^^^^^
+  '
+    _forwarded.scss 1:9  @forward
+    _used.scss 1:1       @use
+    input.scss 1:1       root stylesheet
+
 <===>
 ================================================================================
 <===> variable_assignment/input.scss
@@ -42,6 +55,19 @@ b {
   c: new value;
 }
 
+<===> variable_assignment/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "imported";
+  |         ^^^^^^^^^^
+  '
+    _forwarded.scss 1:9  @forward
+    _used.scss 1:1       @use
+    input.scss 1:1       root stylesheet
+
 <===>
 ================================================================================
 <===> variable_use/input.scss
@@ -62,6 +88,19 @@ $c: d;
 a {
   b: d;
 }
+
+<===> variable_use/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "imported";
+  |         ^^^^^^^^^^
+  '
+    _forwarded.scss 1:9  @forward
+    _used.scss 1:1       @use
+    input.scss 1:1       root stylesheet
 
 <===>
 ================================================================================
@@ -85,3 +124,16 @@ $c: old value !default;
 a {
   b: new value;
 }
+
+<===> with/warning
+DEPRECATION WARNING: Sass @import rules are deprecated and will be removed in Dart Sass 3.0.0.
+
+More info and automated migrator: https://sass-lang.com/d/import
+
+  ,
+1 | @import "imported";
+  |         ^^^^^^^^^^
+  '
+    _forwarded.scss 1:9  @forward
+    _used.scss 1:1       @use
+    input.scss 1:1       root stylesheet
